@@ -8,7 +8,7 @@ For EI petful project - React, Node, DSA
 (a Petful Project)
 
 ## Live App link:
-petful-shop.vercel.app/christopher
+dsa-petful-shop-nkmfteuoq.vercel.app
 
 ## Client Repo: 
 
@@ -36,7 +36,7 @@ Whereby a user submits their name into a queue via the submission form on the ho
 (a Petful Project)
 
 ## Live App link:
-https://dsa-petful-client-james.vercel.app/
+https://dsa-petful-client-chrisopher/
 
 ## Client Repo: 
 
