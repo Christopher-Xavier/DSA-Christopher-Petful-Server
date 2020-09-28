@@ -5,7 +5,7 @@ For EI petful project - React, Node, DSA
 https://github.com/Christopher-Xavier/DSA-Christopher-Petful-Server/
 ## App Name:
 "Petful Shop" 
-(a Petful Shop).   petful-client-blue.vercel.app/
+(a Petful Shop).  https://petful-client-blue.vercel.app/
 
 ## Live App link:
 https://vercel.com/christopher-xavier/petful-client/63hdmenqh/
