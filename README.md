@@ -1,5 +1,6 @@
 # DSA-Petful
 For EI petful project - React, Node, DSA
+
 # Petful Server
  Petful Server
 https://github.com/Christopher-Xavier/DSA-Christopher-Petful-Server/
@@ -31,24 +32,8 @@ Whereby a user submits their name into a queue via the submission form on the ho
 
 # Petful Server
 
-## App Name:
-"Mylittle petful shop" 
-(a Petful Project)
 
-## Live App link:
-dsa-petful-shop-nkmfteuoq.vercel.app/
-
-## Client Repo: 
-
-
-## API Server Repo: 
-
-
-## Pair Contributors: 
-
-
-
-## What is Homeward Bound (a Petful Project)?
+## What is my little petful shop, (a Petful Project)?
 "my Little Petful shop" is my  version of The Petful Project, a fullstack web-development project that is created around the principal of "FIFO"... first-in, first-out.
 
 Whereby a user submits their name into a queue via the submission form on the homepage. When called to the "no. 1 spot", the user is given a message indicating their turn to "adopt" a fictional cat or dog from the available choices on the adoption page.
