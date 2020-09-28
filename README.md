@@ -2,16 +2,16 @@
 For EI petful project - React, Node, DSA
 # Petful Server
  Petful Server
-https://github.com/Christopher-Xavier/DSA-Christopher-Petful-Server
+https://github.com/Christopher-Xavier/DSA-Christopher-Petful-Server/
 ## App Name:
 "Petful Shop" 
-(a Petful Shop)
+(a Petful Shop).   petful-client-blue.vercel.app/
 
 ## Live App link:
-https://vercel.com/christopher-xavier/petful-client/63hdmenqh
+https://vercel.com/christopher-xavier/petful-client/63hdmenqh/
 
 ## Client Repo: 
-https://github.com/Christopher-Xavier/Petful-Client.git
+https://github.com/Christopher-Xavier/Petful-Client.git/
 
 ## API Server Repo: 
 
