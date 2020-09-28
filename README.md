@@ -36,7 +36,7 @@ Whereby a user submits their name into a queue via the submission form on the ho
 (a Petful Project)
 
 ## Live App link:
-https://dsa-petful-client-chrisopher/
+dsa-petful-shop-nkmfteuoq.vercel.app/
 
 ## Client Repo: 
 
