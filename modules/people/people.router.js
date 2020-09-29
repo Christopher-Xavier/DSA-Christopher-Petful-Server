@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', json, (req, res) => {
   const newPerson = { ...req.body };
   PeopleService.enqueue(newPerson.name);
-  res.status(201).json({message: 'You added a people!'});
+  res.status(201).json({message: 'You added a person!'});
 });
 
 
