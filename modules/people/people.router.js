@@ -1,45 +1,50 @@
+const express = require('express')
+const json = express.json()
 
-/* eslint-disable strict */
+const People = require('./people.service')
 
-const express = require('express');
-const json = require('body-parser').json();
-const PeopleService = require('./people.service');
+const router = express.Router()
 
-const router = express.Router();
+router.get('/', async (req, res) => {
+	try {
+		// Return all the people currently in the queue.
+		const people = await People.get()
 
-// GET ALL people currently in list
-router.get('/', (req, res) => {
-  return res.status(200).send(PeopleService.get());
-});
+		if (!people) {
+			return res.status(400).send({ error: 'Empty List' })
+		}
+		res.json(people)
+	} catch (error) {
+		console.log(error)
+	}
+})
 
+router.post('/', json, async (req, res) => {
+	try {
+		const { person } = req.body
+		if (!person) {
+			return res.status(400).send({ error: 'Invalid' })
+		}
+		const data = await People.enqueue(person)
 
-// ADD a NEW PERSON to list
-router.post('/', json, (req, res) => {
-  const newPerson = { ...req.body };
-  PeopleService.enqueue(newPerson.name);
-  res.status(201).json({message: 'You added a person!'});
-});
+		res.status(201).json(data.data)
+	} catch (error) {
+		console.log(error)
+	}
+	// Add a new person to the queue.
+})
 
+router.delete('/', async (req, res) => {
+	try {
+		const deleted = await People.dequeue()
+		const next = await People.enqueue('Next Person')
+		if (!deleted) {
+			return res.status(400).send({ error: `Empty List` })
+		}
+		res.status(204).end()
+	} catch (error) {
+		console.log(error)
+	}
+})
 
-// DELETE a PERSON from list
-router.delete('/', (req, res) => {
-  PeopleService.dequeue();
-  res.status(204).end();
-});
-
-module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = router
