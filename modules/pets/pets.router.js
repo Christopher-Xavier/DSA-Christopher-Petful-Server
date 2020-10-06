@@ -1,27 +1,55 @@
-/* eslint-disable strict */
+const express = require('express')
+const json = require('body-parser').json()
 
-const express = require('express');
-const json = require('body-parser').json();
-const PetsService = require('../pets/pets.service');
+const Pets = require('./pets.service')
+const People = require('../people/people.service')
 
-const router = express.Router();
+const router = express.Router()
 
-//GET ALL PETS available for adoption
-router.get('/', (req, res) => {
-  const allPets = PetsService.get();
-  return res
-    .status(200)
-    .send(allPets);
-});
+router.get('/dog', async (req, res) => {
+	// Return all pets currently up for adoption.
+	try {
+		const nextDog = await Pets.get()['Next Dog']
+		if (!nextDog) {
+			return res.status(400).send({ error: 'No dogs found' })
+		}
+		res.json(nextDog)
+	} catch (error) {
+		console.log(error)
+	}
+})
 
+router.delete('/dog', json, async (req, res) => {
+	// Remove a pet from adoption.
+	try {
+		await Pets.dequeue('dogs')
 
-//DELETE an ADOPTED PET from list
-router.delete('/:pet_type', json, (req, res) => {
-  const petType = req.params.pet_type;
-  PetsService.dequeue(petType);
-  return res
-    .status(204)
-    .end();
-});
+		res.sendStatus(204)
+	} catch (error) {
+		console.log(error)
+	}
+})
 
-module.exports = router;
+router.get('/cat', async (req, res) => {
+	try {
+		const nextCat = await Pets.get()['Next Cat']
+		if (!nextCat) {
+			return res.status(400).send({ error: 'No cats found' })
+		}
+		res.json(nextCat)
+	} catch (error) {
+		console.log(error)
+	}
+})
+router.delete('/cat', json, async (req, res) => {
+	//
+	try {
+		await Pets.dequeue('cats')
+
+		res.sendStatus(204)
+	} catch (error) {
+		console.log(error)
+	}
+})
+
+module.exports = router
